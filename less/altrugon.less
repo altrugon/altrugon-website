@@ -5,3 +5,78 @@
  * under the "Author's custom styles".
  */
 
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+// Colors
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+html,
+body {
+  height: 100%;
+}
+
+#middle-top {
+  background: @grayDarker;
+  border-bottom: 2px solid @black;
+  box-shadow: 0px 2px 6px 1px @gray;
+  float: left;
+  height: 50%;
+  margin-bottom: -135px; /* Adjust for responsive layout */
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+#main-content {
+  background: @white;
+  box-sizing: border-box;
+  clear: left;
+  height: 270px;  /* Adjust for responsive layout */
+  max-width: 960px;
+  position: relative;
+  width: 90%;
+  z-index: 2;
+  
+  > div {
+    height: 100%;
+    perspective: 800px;
+    position: relative;
+  }
+  
+  #languages {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 100%;
+  }
+  
+  .front,
+  .back {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    transform: rotateX( 180deg );
+  }
+  
+  .flipped {
+    transform: rotateX( 180deg );
+  }
+}
