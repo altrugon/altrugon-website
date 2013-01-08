@@ -60,7 +60,6 @@ body {
 }
 
 #main-content {
-  background: @white;
   box-sizing: border-box;
   clear: left;
   height: 270px;  /* Adjust for responsive layout */
@@ -102,5 +101,51 @@ body {
   
   .flipped {
     transform: rotateX( 180deg );
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+h1 {
+  color: @white;
+  line-height: 1.1em;
+  margin: 10px 10px 20px 10px;
+  padding-right: 105px;
+}
+
+nav {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+  
+  .btn {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    width: 94px;
+    
+    i {
+      padding-left: 12px;
+    }
+  }
+}
+
+#languages {
+  background: @white;
+  margin: 10px 0;
+}
+
+#english,
+#spanish {
+  
+  > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  > :first-child {
+    padding-top: 10px;
   }
 }
