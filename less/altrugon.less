@@ -75,7 +75,7 @@ p {
 }
 
 /* ==========================================================================
-   Layout
+   Landing page style
    ========================================================================== */
 html,
 body {
@@ -107,50 +107,9 @@ body {
   position: relative;
   width: 90%;
   z-index: 2;
-  
-  .front,
-  .back {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-  
-  .front {
-    
-    > * {
-      animation-name: fall;
-      animation-delay: 100ms;
-      animation-duration: 1500ms;
-      animation-fill-mode: forwards;
-      animation-timing-function: ease-in-out;
-      bottom: 0;
-      left: 0px;
-      position: relative;
-    }
-  }
-  
-  .back {
-    transform: rotateX( 180deg );
-  }
-  
-  .flipped {
-    transform: rotateX( 180deg );
-  }
 }
 
-#languages {
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-  width: 100%;
-}
-
-/* ==========================================================================
-   Components
-   ========================================================================== */
+/* Site's name */
 h1 {
   color: @white;
   line-height: 1.1em;
@@ -158,6 +117,7 @@ h1 {
   padding-right: 105px;
 }
 
+/* Site's navigation */
 nav {
   position: absolute;
   right: 10px;
@@ -178,19 +138,67 @@ nav {
 
 #languages {
   background: @white;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  width: 100%;
+}
+
+.language {
+  line-height: 1.5em;
+  overflow: hidden;
   
-  > div {
-    line-height: 1.5em;
-    overflow: hidden;
-    
-    > * {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    
-    > :first-child {
-      padding-top: 10px;
-    }
+  > * {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  > :first-child {
+    padding-top: 10px;
   }
 }
+  
+.front,
+.back {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  
+  > * {
+    animation-name: fall;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    bottom: 0;
+    left: 0px;
+    position: relative;
+  }
+  
+  > :nth-child(1) {
+    animation-delay: 200ms;
+  }  
+  
+  > :nth-child(2) {
+    animation-delay: 150ms;
+  }  
+  
+  > :nth-child(3) {
+    animation-delay: 100ms;
+  }  
+}
+
+.back {
+  transform: rotateX( 180deg );
+}
+
+.flipped {
+  transform: rotateX( 180deg );
+}
+
 
