@@ -90,6 +90,7 @@ body {
     backface-visibility: hidden;
   }
   
+  /* Animation for page when loaded: I have some problem applying it with the responsive styles
   .front {
     animation-name: flip;
     animation-delay: 100ms;
@@ -98,7 +99,7 @@ body {
     animation-timing-function: ease-in-out;
     transform: rotateX( -90deg );
   }
-  
+  */
   .back {
     transform: rotateX( 180deg );
   }
@@ -146,18 +147,18 @@ nav {
 
 #languages {
   background: @white;
+  
+  > div {
+    line-height: 1.5em;
+    
+    > * {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    > :first-child {
+      padding-top: 10px;
+    }
+  }
 }
 
-#english,
-#spanish {
-  line-height: 1.5em;
-  
-  > * {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  > :first-child {
-    padding-top: 10px;
-  }
-}
