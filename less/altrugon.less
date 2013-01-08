@@ -47,6 +47,33 @@ p {
 	to { transform: rotateX(0deg); }
 }
 
+@keyframes fall {
+  40%, 70%, 90%{
+     animation-timing-function: ease-out;
+     transform: translate(0px, 0px);
+  }
+  0% {
+     transform: translate(0px, -500px);
+     animation-timing-function: ease-in;
+  }
+  55% {
+     transform: translate(0px, -50px);
+     animation-timing-function: ease-in;
+  }
+  80% {
+     transform: translate(0px, -25px);
+     animation-timing-function: ease-in;
+  }
+  95% {
+     transform: translate(0px, -10px);
+     animation-timing-function: ease-in;
+  }
+  100% {
+     transform: translate(0px, 0px);
+     animation-timing-function: ease-out;
+  }
+}
+
 /* ==========================================================================
    Layout
    ========================================================================== */
@@ -90,16 +117,20 @@ body {
     backface-visibility: hidden;
   }
   
-  /* Animation for page when loaded: I have some problem applying it with the responsive styles
   .front {
-    animation-name: flip;
-    animation-delay: 100ms;
-    animation-duration: 1500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-    transform: rotateX( -90deg );
+    
+    > * {
+      animation-name: fall;
+      animation-delay: 100ms;
+      animation-duration: 1500ms;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      bottom: 0;
+      left: 0px;
+      position: relative;
+    }
   }
-  */
+  
   .back {
     transform: rotateX( 180deg );
   }
@@ -150,6 +181,7 @@ nav {
   
   > div {
     line-height: 1.5em;
+    overflow: hidden;
     
     > * {
       padding-left: 10px;
