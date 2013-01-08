@@ -31,6 +31,14 @@
   min-height: auto;
 }
 
+li {
+  line-height: 1.3em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
 /* ==========================================================================
    Animations
    ========================================================================== */
@@ -69,14 +77,6 @@ body {
   width: 90%;
   z-index: 2;
   
-  #languages {
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    width: 100%;
-  }
-  
   .front,
   .back {
     display: block;
@@ -102,6 +102,14 @@ body {
   .flipped {
     transform: rotateX( 180deg );
   }
+}
+
+#languages {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -134,11 +142,11 @@ nav {
 
 #languages {
   background: @white;
-  margin: 10px 0;
 }
 
 #english,
 #spanish {
+  line-height: 1.5em;
   
   > * {
     padding-left: 10px;
