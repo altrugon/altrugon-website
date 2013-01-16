@@ -19,6 +19,16 @@
 @grayLighter:           #eee;
 @white:                 #fff;
 
+@myGray: #404040;
+@orange: #f05a28;
+@redish: #c3002a;
+
+// Elements
+// -------------------------
+@middle-top-bg-color: @myGray;
+@middle-top-border-color: @orange;
+
+@link-color: @orange;
 
 /* ==========================================================================
    Mixins
@@ -76,6 +86,15 @@ p {
   margin-bottom: 1em;
 }
 
+a {
+  color: @link-color;
+  
+  &:hover {
+    color: spin(@link-color, -10);
+    text-decoration: none;
+    transition: .5s;
+  }
+}
 /* ==========================================================================
    Animations
    ========================================================================== */
@@ -124,40 +143,8 @@ body {
 }
 
 #middle-top {
-  background: @grayDarker;
-  /*background: linear-gradient(34deg,
-    @gray 0%,
-    @grayDarker 10%,
-    @white,
-    @gray 12%,
-    @grayDarker 20%,
-    @white,
-    @gray 22%,
-    @grayDarker 30%,
-    @white,
-    @gray 32%,
-    @grayDarker 40%,
-    @white,
-    @gray 42%,
-    @grayDarker 50%,
-    @white,
-    @gray 52%,
-    @grayDarker 60%,
-    @white,
-    @gray 62%,
-    @grayDarker 70%,
-    @white,
-    @gray 72%,
-    @grayDarker 80%,
-    @white,
-    @gray 82%,
-    @grayDarker 90%,
-    @white,
-    @gray 92%,
-    @grayDarker 100%
-  );*/
-  .middle-top-gradient(34deg, @grayDarker, @white);
-  border-bottom: 2px solid @black;
+  background: @middle-top-bg-color;
+  border-bottom: 6px solid @middle-top-border-color;
   box-shadow: 0px 2px 6px 1px @gray;
   float: left;
   height: 50%;
