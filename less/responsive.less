@@ -11,6 +11,16 @@
   h1 {
     font-size: 24px;
   }
+  
+  nav {
+    top: 18px;
+    
+    .btn {
+      font-size: 12px;
+      padding: 2px 0;
+      width: 80px;
+    }
+  }
 }
  
 /* ==========================================================================
@@ -55,7 +65,7 @@
   
   #main-content {
     height: 500px;
-    max-width: 860px;
+    max-width: 1100px;
   }
   
   nav {
@@ -64,22 +74,22 @@
   
   #languages {
     height: 410px;
+  }
+
+  .language {
+    line-height: 1.5em;
     
-    > div {
-      font-size: 20px;
-      
-      > * {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-      
-      > :first-child {
-        padding-top: 30px;
-      }
-      
-      > :last-child {
-        padding-bottom: 30px;
+    > p {
+      padding-left: 70px;
+      padding-right: 70px;
+    
+      &:first-child {
+        padding-top: 70px;
       }
     }
+  }
+  
+  .my-links {
+    margin: 70px;
   }
 }
