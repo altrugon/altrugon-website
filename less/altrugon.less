@@ -15,6 +15,7 @@
 @grayDarker:            #333333;
 @grayDark:              #404040;
 @gray:                  #555555;
+@grayLight:             #929497;
 @orange:                #f05a28;
 @redish:                #c3002a;
 @white:                 #ffffff;
@@ -26,8 +27,12 @@
 @link-color:                @orange;
 @my-links-bg-color:         @grayDark;
 @heading-color:             @orange;
-@btn-color-bg:              @orange;
-@btn-color-text:            @grayDark;
+@btn-bg-color:              @orange;
+@btn-text-color:            @grayDark;
+@languages-bg-color:        @white;
+@nav-icon-color:            @orange;
+@nav-link-hover-color:      @white;
+@nav-link-color:            @grayLight;
 
 /* ==========================================================================
    Mixins
@@ -105,7 +110,7 @@ h1 {
   line-height: 1.1em;
   margin: 10px 10px 20px 10px;
   padding-right: 100px;
-  text-shadow: @grayDarker 0.1em 0.1em 0.2em;
+  text-shadow: 0.1em 0.1em 0.2em @grayDarker;
 }
 
 /* Site's navigation */
@@ -116,8 +121,8 @@ nav {
   z-index: 2;
   
   .btn {
-    background: linear-gradient(to bottom, darken(@btn-color-bg, 5%), @btn-color-bg);
-    color: @btn-color-text;
+    background: linear-gradient(to bottom, darken(@btn-bg-color, 5%), @btn-bg-color);
+    color: @btn-text-color;
     font-weight: 600;
     padding-left: 0;
     padding-right: 0;
@@ -127,6 +132,42 @@ nav {
     
     i {
       padding-left: 12px;
+    }
+  }
+}
+
+/* Content section */
+#languages {
+  background: @languages-bg-color;
+  padding: 20px;
+}
+
+ul.icons {
+  background: @my-links-bg-color;
+  margin-left: 0;
+  padding: 10px;
+  text-indent: 0;
+
+  li {
+    margin: 3px 0;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      color: @nav-icon-color;
+      width: 1.75em;
+    }
+  }
+
+  a {
+    color: @nav-link-color;
+    text-shadow: 0 1px 0 @grayDarker;
+  
+    &:hover {
+      color: @nav-link-hover-color;
+
+      i {
+        color: @nav-icon-color;
+      }
     }
   }
 }
