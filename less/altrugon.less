@@ -111,8 +111,9 @@ em {
 /* Site's name */
 h1 {
   color: @heading-color;
+  font-size: 40px;
   line-height: 1.1em;
-  margin: 10px 10px 20px 10px;
+  margin: 10px 10px 20px 20px;
   padding-right: 100px;
   text-shadow: 0.1em 0.1em 0.2em @grayDarker;
 }
@@ -120,8 +121,8 @@ h1 {
 /* Site's navigation */
 nav {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 20px;
+  top: 19px;
   z-index: 2;
   
   .btn {
@@ -158,16 +159,21 @@ nav {
 #languages {
   background: @languages-bg-color;
   padding: 20px;
+  position: relative;
 }
 
 ul.icons {
   background: @my-links-bg-color;
   margin-left: 0;
-  padding: 10px;
+  padding: 10px 0;
   text-indent: 0;
 
   li {
-    margin: 3px 0;
+    margin: .4em 0;
+    padding: 0 10px;
+    
+    &:first-child { margin-top: 0; }
+    &:last-child { margin-bottom: 0; }
 
     [class^="icon-"],
     [class*=" icon-"] {
@@ -187,6 +193,11 @@ ul.icons {
         color: @nav-icon-color;
       }
     }
+  }
+
+  .icon-large:before {
+    font-size: 1.5em;
+    vertical-align: -12%;
   }
 }
 

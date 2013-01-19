@@ -9,7 +9,7 @@
 @media screen and (max-width: 480px) {
   
   h1 {
-    font-size: 24px;
+    font-size: 30px;
   }
   
   nav {
@@ -27,26 +27,53 @@
    Landscape phone to portrait tablet
    ========================================================================== */
 @media screen and (max-width: 767px) {
-  
-  h1 {
-    font-size: 30px;
-  }
-  
-  #main-content {
-    max-width: 720px;
-  }
 }
  
 /* ==========================================================================
    Portrait tablet to landscape and desktop
    ========================================================================== */
-@media screen and (min-width: 768px), screen and (max-width: 979px) {
+//@media screen and (min-width: 768px) and (max-width: 979px) {
+@media screen and (min-width: 768px) {
+
+  #middle-top {
+    float: left;
+    margin-bottom: -215px; // Half of #main-content's height
+    position: relative;
+  }
+  
   h1 {
-    font-size: 38px;
+    margin-left: 30px;
+  }
+  
+  nav {
+    right: 30px;
   }
   
   #main-content {
-    max-width: 720px;
+    clear: left;
+    height: 430px;
+    width: 730px;
+  }
+  
+  #languages {
+    padding: 30px;
+  }
+  
+  .language > * {
+    padding-right: 240px;
+  }
+  
+  ul.icons {
+    padding: 15px 0px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 230px;
+    z-index: 2;
+    
+    li {
+      padding: 0 12px;
+    }
   }
 }
 
@@ -54,10 +81,6 @@
    Large desktop
    ========================================================================== */
 @media screen and (min-width: 1200px) {
-  
-  h1 {
-    font-size: 46px;
-  }
   
   #middle-top {
     margin-bottom: -250px;
