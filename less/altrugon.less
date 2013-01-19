@@ -80,7 +80,8 @@ a {
   &:hover {
     color: spin(@link-color, -10);
     text-decoration: none;
-    transition: .5s;
+    transition-duration: .5s;
+    transition-property: color;
   }
 }
 
@@ -106,7 +107,6 @@ em {
   width: 90%;
   z-index: 2;
 }
-
 
 /* Site's name */
 h1 {
@@ -141,6 +141,20 @@ nav {
 }
 
 /* Content section */
+.back {
+  display: none;
+}
+
+.flipped {
+
+  .front {
+    display: none;
+  }
+  .back {
+    display: block;
+  }
+}
+
 #languages {
   background: @languages-bg-color;
   padding: 20px;
