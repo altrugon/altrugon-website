@@ -38,6 +38,40 @@
    Mixins
    ========================================================================== */
 
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes flipH {
+	to { transform: rotateX(0deg); }
+}
+
+@keyframes fall {
+  40%, 70%, 90%{
+     animation-timing-function: ease-out;
+     transform: translate(0px, 0px);
+  }
+  0% {
+     transform: translate(0px, -500px);
+     animation-timing-function: ease-in;
+  }
+  55% {
+     transform: translate(0px, -50px);
+     animation-timing-function: ease-in;
+  }
+  80% {
+     transform: translate(0px, -25px);
+     animation-timing-function: ease-in;
+  }
+  95% {
+     transform: translate(0px, -10px);
+     animation-timing-function: ease-in;
+  }
+  100% {
+     transform: translate(0px, 0px);
+     animation-timing-function: ease-out;
+  }
+}
 
 
 /* ==========================================================================
@@ -68,6 +102,8 @@ html,
 body {
   height: 100%;
 }
+
+html.js .no-js { display: none; }
 
 body {
   color: @gray;
@@ -149,6 +185,37 @@ nav {
 /* Content section */
 .back {
   display: none;
+}
+
+.front {
+  
+  > * {
+    animation-name: fall;
+    animation-duration: 1500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    bottom: 0;
+    left: 0px;
+    position: relative;
+  }
+  
+  ul.icons {
+    left: auto;
+    bottom: auto;
+    position: absolute;
+  }
+  
+  > :nth-child(1) {
+    animation-delay: 200ms;
+  }  
+  
+  > :nth-child(2) {
+    animation-delay: 150ms;
+  }  
+  
+  > :nth-child(3) {
+    animation-delay: 100ms;
+  }  
 }
 
 .flipped {

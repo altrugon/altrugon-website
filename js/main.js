@@ -32,7 +32,6 @@
   }
   
   $(document).ready(function(){
-    $('.no-js').remove();
     flip_content();
     add_my_links();
   });
