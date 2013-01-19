@@ -22,8 +22,16 @@
     }
   }
   
-  .front ul.icons {
+  .front .language-inner ul.icons {
     position: relative;
+  }
+  
+  .back {
+    transform: rotateY( 180deg );
+  }
+  
+  .flipped {
+    transform: rotateY( 180deg );
   }
 }
  
@@ -59,12 +67,8 @@
     width: 730px;
   }
   
-  #languages {
-    padding: 30px;
-  }
-  
-  .language > * {
-    padding-right: 250px;
+  .language-inner {
+    padding: 30px 280px 30px 30px;
   }
   
   ul.icons {
@@ -112,11 +116,10 @@
 
   #languages {
     font-size: 20px;
-    padding: 70px;
   }
-
-  .language > * {
-    padding-right: 480px;
+  
+  .language-inner {
+    padding: 70px 550px 70px 70px;
   }
 
   ul.icons {

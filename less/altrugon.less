@@ -42,10 +42,6 @@
    Animations
    ========================================================================== */
 
-@keyframes flipH {
-	to { transform: rotateX(0deg); }
-}
-
 @keyframes fall {
   40%, 70%, 90%{
      animation-timing-function: ease-out;
@@ -138,7 +134,10 @@ em {
 }
 
 #main-content {
+  height: 820px;
   max-width: 1100px;
+  perspective: 1800px;
+  overflow: hidden;
   position: relative;
   width: 90%;
   z-index: 2;
@@ -183,11 +182,28 @@ nav {
 }
 
 /* Content section */
-.back {
-  display: none;
+#languages {
+  height: 100%;
+  position: absolute;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  width: 100%;
 }
 
-.front {
+.language {
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.language-inner {
+  background: @languages-bg-color;
+  padding: 20px;
+}
+
+.front .language-inner {
   
   > * {
     animation-name: fall;
@@ -218,24 +234,17 @@ nav {
   }  
 }
 
-.flipped {
-
-  .front {
-    display: none;
-  }
-  .back {
-    display: block;
-  }
+.back {
+  transform: rotateX( 180deg );
 }
 
-#languages {
-  background: @languages-bg-color;
-  padding: 20px;
-  position: relative;
+.flipped {
+  transform: rotateX( 180deg );
 }
 
 ul.icons {
   background: @my-links-bg-color;
+  margin-bottom: 1em;
   margin-left: 0;
   padding: 10px 0;
   text-indent: 0;
