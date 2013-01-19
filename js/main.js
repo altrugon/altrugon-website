@@ -12,7 +12,7 @@
           .addClass('english');
       }
       else {
-        $('span', this).text('Spanish');
+        $('span', this).text('Español');
         $(this)
           .removeClass('english')
           .addClass('spanish');
