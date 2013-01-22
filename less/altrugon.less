@@ -101,6 +101,7 @@
   -webkit-backface-visibility: @value;
   -o-backface-visibility: @value;
   backface-visibility: @value;
+  opacity: 0.99; /* This is needed for webkit, for more info read http://stackoverflow.com/questions/10355564/backface-visibility-broken-in-chrome-certain-platforms-versions */
 }
 /* ==========================================================================
    Animations
@@ -113,7 +114,6 @@
   0% {
      -webkit-transform: translate(0px, -500px);
      -webkit-animation-timing-function:ease-in;
-   position: relative;
   }
   55% {
      -webkit-transform: translate(0px, -50px);
@@ -133,31 +133,30 @@
   }
 }
 
-@-moz-keyframes fall {
+@-o-keyframes fall {
   40%, 70%, 90%{
-     -moz-animation-timing-function: ease-out;
-     -moz-transform: translate(0px, 0px);
+     -o-animation-timing-function: ease-out;
+     -o-transform: translate(0px, 0px);
   }
   0% {
-     -moz-transform: translate(0px, -500px);
-     -moz-animation-timing-function:ease-in;
-     position: relative;
+     -o-transform: translate(0px, -500px);
+     -o-animation-timing-function:ease-in;
   }
   55% {
-     -moz-transform: translate(0px, -50px);
-     -moz-animation-timing-function:ease-in;
+     -o-transform: translate(0px, -50px);
+     -o-animation-timing-function:ease-in;
   }
   80% {
-     -moz-transform: translate(0px, -25px);
-     -moz-animation-timing-function:ease-in;
+     -o-transform: translate(0px, -25px);
+     -o-animation-timing-function:ease-in;
   }
   95% {
-     -moz-transform: translate(0px, -10px);
-     -moz-animation-timing-function:ease-in;
+     -o-transform: translate(0px, -10px);
+     -o-animation-timing-function:ease-in;
   }
   100% {
-     -moz-transform: translate(0px, 0px);
-     -moz-animation-timing-function:ease-out;
+     -o-transform: translate(0px, 0px);
+     -o-animation-timing-function:ease-out;
   }
 }
 
@@ -169,7 +168,6 @@
   0% {
      transform: translate(0px, -500px);
      animation-timing-function:ease-in;
-     position: relative;
   }
   55% {
      transform: translate(0px, -50px);
@@ -336,7 +334,7 @@ nav {
     .animation-timing-function(ease-in-out);
     bottom: 0;
     left: 0px;
-   // position: relative;
+    position: relative;
   }
  
   ul.icons {
@@ -366,7 +364,7 @@ ul.icons {
   padding: 10px 0;
   text-indent: 0;
   
-  .flipped .front & { display: none; }
+  /*.flipped .front & { display: none; }*/
 
   li {
     margin: .4em 0;
