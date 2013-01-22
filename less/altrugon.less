@@ -37,38 +37,103 @@
 /* ==========================================================================
    Mixins
    ========================================================================== */
+.animation(@name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode) {
+  -o-animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
+  -webkit-animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
+  animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
+}
 
+.animation-name(@name) {
+  -o-animation-name: @name;
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+
+.animation-duration(@duration) {
+  -o-animation-duration: @duration;
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+.animation-fill-mode(@fill-mode) {
+  -o-animation-fill-mode: @fill-mode;
+  -webkit-animation-fill-mode: @fill-mode;
+  animation-fill-mode: @fill-mode;
+}
+
+.animation-timing-function(@timing-function) {
+  -o-animation-timing-function: @timing-function;
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+
+.perspective(@value) {
+  -webkit-perspective: @value;
+  -moz-perspective: @value;
+  -o-perspective: @value;
+  perspective: @value;
+}
+
+.transition(@duration) {
+  -webkit-transition: @duration;
+  -moz-transition: @duration;
+  -o-transition: @duration;
+  transition: @duration;
+}
+
+.transform(@value) {
+  -webkit-transform: @value;
+  -moz-transform: @value;
+  -o-transform: @value;
+  transform: @value;
+}
+
+.transform-style(@style) {
+  -webkit-transform-style: @style;
+  -moz-transform-style: @style;
+  -o-transform-style: @style;
+  transform-style: @style;
+}
+
+.backface-visibility(@value) {
+  -webkit-backface-visibility: @value;
+  -moz-backface-visibility: @value;
+  -o-backface-visibility: @value;
+  backface-visibility: @value;
+}
 /* ==========================================================================
    Animations
    ========================================================================== */
-
+/*
+@-o-keyframes fall,
+@-webkit-keyframes fall,
 @keyframes fall {
   40%, 70%, 90%{
-     animation-timing-function: ease-out;
-     transform: translate(0px, 0px);
+     .animation-timing-function(ease-out);
+     .transform(translate(0px, 0px));
   }
   0% {
-     transform: translate(0px, -500px);
-     animation-timing-function: ease-in;
+     .transform(translate(0px, -500px));
+     .animation-timing-function(ease-in);
   }
   55% {
-     transform: translate(0px, -50px);
-     animation-timing-function: ease-in;
+     .transform(translate(0px, -50px));
+     .animation-timing-function(ease-in);
   }
   80% {
-     transform: translate(0px, -25px);
-     animation-timing-function: ease-in;
+     .transform(translate(0px, -25px));
+     .animation-timing-function(ease-in);
   }
   95% {
-     transform: translate(0px, -10px);
-     animation-timing-function: ease-in;
+     .transform(translate(0px, -10px));
+     .animation-timing-function(ease-in);
   }
   100% {
-     transform: translate(0px, 0px);
-     animation-timing-function: ease-out;
+     .transform(translate(0px, 0px));
+     .animation-timing-function(ease-out);
   }
 }
-
+*/
 
 /* ==========================================================================
    Bootstrap overrrides
@@ -136,7 +201,7 @@ em {
 #main-content {
   height: 820px;
   max-width: 1100px;
-  perspective: 1800px;
+  .perspective(1800px);
   overflow: hidden;
   position: relative;
   width: 90%;
@@ -185,13 +250,13 @@ nav {
 #languages {
   height: 100%;
   position: absolute;
-  transition: transform 1s;
-  transform-style: preserve-3d;
+  .transition(1s);
+  .transform-style(preserve-3d);
   width: 100%;
 }
 
 .language {
-  backface-visibility: hidden;
+  .backface-visibility(hidden);
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -204,17 +269,17 @@ nav {
 }
 
 .front .language-inner {
-  
+/* 
   > * {
-    animation-name: fall;
-    animation-duration: 1500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    //.animation-name(fall);
+    //.animation-duration(1500ms);
+    //.animation-fill-mode(forwards);
+    .animation-timing-function(ease-in-out);
     bottom: 0;
     left: 0px;
-    position: relative;
+    //position: relative;
   }
-  
+*/  
   ul.icons {
     left: auto;
     bottom: auto;
@@ -235,11 +300,11 @@ nav {
 }
 
 .back {
-  transform: rotateX( 180deg );
+  .transform(rotateX( 180deg ));
 }
 
-.flipped {
-  transform: rotateX( 180deg );
+#languages.flipped {
+  .transform(rotateX( 180deg ));
 }
 
 ul.icons {
