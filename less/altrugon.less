@@ -69,35 +69,30 @@
 
 .perspective(@value) {
   -webkit-perspective: @value;
-  -moz-perspective: @value;
   -o-perspective: @value;
   perspective: @value;
 }
 
 .transition(@duration) {
   -webkit-transition: @duration;
-  -moz-transition: @duration;
   -o-transition: @duration;
   transition: @duration;
 }
 
 .transform(@value) {
   -webkit-transform: @value;
-  -moz-transform: @value;
   -o-transform: @value;
   transform: @value;
 }
 
 .transform-style(@style) {
   -webkit-transform-style: @style;
-  -moz-transform-style: @style;
   -o-transform-style: @style;
   transform-style: @style;
 }
 
 .backface-visibility(@value) {
   -webkit-backface-visibility: @value;
-  -moz-backface-visibility: @value;
   -o-backface-visibility: @value;
   backface-visibility: @value;
 }
@@ -226,6 +221,8 @@ nav {
   z-index: 2;
   
   .btn {
+    background: -webkit-linear-gradient(top, darken(@btn-bg-color, 5%), @btn-bg-color); // Safari 5.1+, Chrome 10+
+    background: -o-linear-gradient(top, darken(@btn-bg-color, 5%), @btn-bg-color); // Opera 11.10
     background: linear-gradient(to bottom, darken(@btn-bg-color, 5%), @btn-bg-color);
     color: @btn-text-color;
     font-weight: 600;
@@ -237,6 +234,8 @@ nav {
     
     &.active,
     &:active, {
+      background: -webkit-linear-gradient(top, @btn-bg-color, lighten(@btn-bg-color, 10%)); // Safari 5.1+, Chrome 10+
+      background: -o-linear-gradient(top, @btn-bg-color, lighten(@btn-bg-color, 10%)); // Opera 11.10
       background: linear-gradient(to bottom, @btn-bg-color, lighten(@btn-bg-color, 10%));
     }
     
@@ -267,9 +266,9 @@ nav {
   background: @languages-bg-color;
   padding: 20px;
 }
-
+/*
 .front .language-inner {
-/* 
+
   > * {
     //.animation-name(fall);
     //.animation-duration(1500ms);
@@ -279,7 +278,7 @@ nav {
     left: 0px;
     //position: relative;
   }
-*/  
+ 
   ul.icons {
     left: auto;
     bottom: auto;
@@ -288,24 +287,17 @@ nav {
   
   > :nth-child(1) {
     animation-delay: 200ms;
-  }  
+  }
   
   > :nth-child(2) {
     animation-delay: 150ms;
-  }  
+  }
   
   > :nth-child(3) {
     animation-delay: 100ms;
-  }  
+  }
 }
-
-.back {
-  .transform(rotateX( 180deg ));
-}
-
-#languages.flipped {
-  .transform(rotateX( 180deg ));
-}
+*/
 
 ul.icons {
   background: @my-links-bg-color;
@@ -313,6 +305,8 @@ ul.icons {
   margin-left: 0;
   padding: 10px 0;
   text-indent: 0;
+  
+  .flipped .front & { display: none; }
 
   li {
     margin: .4em 0;
