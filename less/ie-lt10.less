@@ -1,0 +1,73 @@
+/*
+ * Style for IE lower than 10.
+ */
+
+#middle-top {
+  float: left;
+  margin-bottom: -420px; // Aprox. 70% of #main-content's height
+  position: relative;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px 70px 50px 70px;
+}
+
+nav {
+  right: 70px;
+  
+  .btn {
+    background: #EE4811;
+    border-color: #F05A28;
+    font-size: 20px;
+    padding: 6px 0;
+    width: 114px;
+    
+    &:hover {
+      background: #F05A28;
+    }
+  }
+}
+
+#main-content {
+  clear: left;
+  height: 600px;
+  width: 1100px;
+}
+
+#languages {
+  font-size: 20px;
+}
+
+.language-inner {
+  padding: 70px 550px 70px 70px;
+}
+
+ul.icons {
+  font-size: 22px;
+  padding: 28px 0;
+  position: absolute;
+  right: 70px;
+  top: 70px;
+  width: 380px;
+  z-index: 2;
+  
+  li {
+    padding: 0 28px;
+  }
+}
+
+.back {
+  display: none;
+}
+
+.flipped {
+  
+  .front {
+    display: none;
+  }
+  
+  .back {
+    display: block;
+  }
+}
