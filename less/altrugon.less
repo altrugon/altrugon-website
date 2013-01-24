@@ -38,68 +38,57 @@
    Mixins
    ========================================================================== */
 .animation(@name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode) {
-  -o-animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
   -webkit-animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
   animation: @name, @duration, @timing-function, @animation-delay, @iteration-count, @direction, @fill-mode;
 }
 
 .animation-name(@name) {
-  -o-animation-name: @name;
   -webkit-animation-name: @name;
   animation-name: @name;
 }
 
 .animation-duration(@duration) {
-  -o-animation-duration: @duration;
   -webkit-animation-duration: @duration;
   animation-duration: @duration;
 }
 
 .animation-delay(@delay) {
-  -o-animation-delay: @delay;
   -webkit-animation-delay: @delay;
   animation-delay: @delay;
 }
 
 .animation-fill-mode(@fill-mode) {
-  -o-animation-fill-mode: @fill-mode;
   -webkit-animation-fill-mode: @fill-mode;
   animation-fill-mode: @fill-mode;
 }
 
 .animation-timing-function(@timing-function) {
-  -o-animation-timing-function: @timing-function;
   -webkit-animation-timing-function: @timing-function;
   animation-timing-function: @timing-function;
 }
 
 .perspective(@value) {
   -webkit-perspective: @value;
-  -o-perspective: @value;
   perspective: @value;
 }
 
 .transition(@duration) {
   -webkit-transition: @duration;
-  -o-transition: @duration;
   transition: @duration;
 }
 
 .transform(@value) {
   -webkit-transform: @value;
-  -o-transform: @value;
   transform: @value;
 }
 
 .transform-style(@style) {
   -webkit-transform-style: @style;
-  -o-transform-style: @style;
   transform-style: @style;
 }
 
 .backface-visibility(@value) {
   -webkit-backface-visibility: @value;
-  -o-backface-visibility: @value;
   backface-visibility: @value;
   opacity: 0.99; /* This is needed for webkit, for more info read http://stackoverflow.com/questions/10355564/backface-visibility-broken-in-chrome-certain-platforms-versions */
 }
@@ -130,33 +119,6 @@
   100% {
      -webkit-transform: translate(0px, 0px);
      -webkit-animation-timing-function:ease-out;
-  }
-}
-
-@-o-keyframes fall {
-  40%, 70%, 90%{
-     -o-animation-timing-function: ease-out;
-     -o-transform: translate(0px, 0px);
-  }
-  0% {
-     -o-transform: translate(0px, -500px);
-     -o-animation-timing-function:ease-in;
-  }
-  55% {
-     -o-transform: translate(0px, -50px);
-     -o-animation-timing-function:ease-in;
-  }
-  80% {
-     -o-transform: translate(0px, -25px);
-     -o-animation-timing-function:ease-in;
-  }
-  95% {
-     -o-transform: translate(0px, -10px);
-     -o-animation-timing-function:ease-in;
-  }
-  100% {
-     -o-transform: translate(0px, 0px);
-     -o-animation-timing-function:ease-out;
   }
 }
 
@@ -280,7 +242,6 @@ nav {
   
   .btn {
     background: -webkit-linear-gradient(top, darken(@btn-bg-color, 5%), @btn-bg-color); // Safari 5.1+, Chrome 10+
-    background: -o-linear-gradient(top, darken(@btn-bg-color, 5%), @btn-bg-color); // Opera 11.10
     background: linear-gradient(to bottom, darken(@btn-bg-color, 5%), @btn-bg-color);
     color: @btn-text-color;
     font-weight: 600;
@@ -293,7 +254,6 @@ nav {
     &.active,
     &:active, {
       background: -webkit-linear-gradient(top, @btn-bg-color, lighten(@btn-bg-color, 10%)); // Safari 5.1+, Chrome 10+
-      background: -o-linear-gradient(top, @btn-bg-color, lighten(@btn-bg-color, 10%)); // Opera 11.10
       background: linear-gradient(to bottom, @btn-bg-color, lighten(@btn-bg-color, 10%));
     }
     
