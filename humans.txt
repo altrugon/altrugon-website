@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Alberto Trujillo González -- Web Developer -- http://twitter.com/altrugon
 
 # THANKS
 
-    <name>
+    To Graham Dobson for his creativity -- http://www.grahamdobson.com/
 
 # TECHNOLOGY COLOPHON
 
