@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Alberto Trujillo González -- Web Developer -- http://twitter.com/altrugon
+
+# THANKS
+
+    To Graham Dobson for his creativity -- http://www.grahamdobson.com/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
